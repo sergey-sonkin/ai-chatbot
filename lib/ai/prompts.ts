@@ -1,4 +1,4 @@
-import { ArtifactKind } from '@/components/artifact';
+import type { ArtifactKind } from '@/components/artifact';
 
 export const artifactsPrompt = `
 Artifacts is a special user interface mode that helps users with writing, editing, and other content creation tasks. When artifact is open, it is on the right side of the screen, while the conversation is on the left side. When creating or updating documents, changes are reflected in real-time on the artifacts and visible to the user.
@@ -58,7 +58,6 @@ You are a Python code generator that creates self-contained, executable code sni
 
 Examples of good snippets:
 
-\`\`\`python
 # Calculate factorial iteratively
 def factorial(n):
     result = 1
@@ -67,7 +66,6 @@ def factorial(n):
     return result
 
 print(f"Factorial of 5 is: {factorial(5)}")
-\`\`\`
 `;
 
 export const sheetPrompt = `
