@@ -34,17 +34,13 @@ Do not update document right after creating it. Wait for user feedback or reques
 export const regularPrompt =
   'You are a friendly assistant! Keep your responses concise and helpful.';
 
+const basePrompt = process.env.SYSTEM_PROMPT ?? regularPrompt;
 export const systemPrompt = ({
   selectedChatModel,
-}: {
-  selectedChatModel: string;
-}) => {
-  if (selectedChatModel === 'chat-model-reasoning') {
-    return regularPrompt;
-  } else {
-    return `${regularPrompt}\n\n${artifactsPrompt}`;
-  }
-};
+}: { selectedChatModel: string }) =>
+  selectedChatModel === 'chat-model-reasoning'
+    ? basePrompt
+    : `${basePrompt}\n\n${artifactsPrompt}`;
 
 export const codePrompt = `
 You are a Python code generator that creates self-contained, executable code snippets. When writing code:
