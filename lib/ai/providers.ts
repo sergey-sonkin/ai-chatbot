@@ -8,10 +8,7 @@ import { artifactModel, titleModel } from './models.test';
 
 export const myProvider = customProvider({
   languageModels: {
-    'chat-model': wrapLanguageModel({
-      model: xai('grok-3-beta'),
-      middleware: extractReasoningMiddleware({ tagName: 'think' }),
-    }),
+    'chat-model': xai('grok-3-beta'),
     'chat-model-reasoning': wrapLanguageModel({
       model: xai('grok-3-mini-beta'),
       middleware: extractReasoningMiddleware({ tagName: 'think' }),
